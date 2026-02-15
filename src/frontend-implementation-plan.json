@@ -1,0 +1,39 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Voice-recognition multi-match beat counting during chanting",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "summary": "Count multiple mantra repetitions per finalized speech-to-text segment and add safeguards to avoid double-processing the same finalized transcript.",
+      "acceptanceCriteria": [
+        "When a finalized speech recognition result contains the selected mantra repeated multiple times (e.g., \"Radhe Radhe Radhe Radhe\"), the session count increases by the number of detected repetitions, not just +1.",
+        "Counting remains case-insensitive and punctuation/extra whitespace do not prevent matches (uses the existing normalization approach).",
+        "The change does not double-count the same finalized transcript event (each finalized transcript segment is processed once).",
+        "Manual increment (+) continues to work and increments the same session count used by Mala Progress and Target Progress."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useMantraCounting.ts",
+          "operation": "modify",
+          "description": "Update transcript processing to compute a non-overlapping occurrence count of the normalized selected mantra within each normalized finalized transcript segment, incrementing the session count by the number of matches found (not capped at +1). Replace the current time-based duplicate guard with a finalized-segment dedupe guard (e.g., track last processed normalized finalized transcript and ignore exact repeats) so each finalized transcript segment is processed once while still allowing rapid distinct segments. Keep manualIncrement wired to the same count state used by the chanting session."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Label the voice recognition count as beats in the Chanting UI and display the live beat count in the voice recognition card.",
+      "acceptanceCriteria": [
+        "The voice recognition section displays an English label that references “beats” (e.g., “Voice beats”) alongside the live count used for the current session.",
+        "All user-facing text introduced by this change is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/chant/VoiceControls.tsx",
+          "operation": "modify",
+          "description": "Adjust the voice recognition card UI copy to reference “beats” in English (e.g., rename the section title and/or add a \"Voice beats\" label) and render the live session count value inside this card so users can see the current beat total contributed by voice detection and manual (+). Ensure the displayed value reflects the same session count used by MalaCounter and TargetProgress."
+        }
+      ]
+    }
+  ]
+}

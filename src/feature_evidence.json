@@ -1,0 +1,43 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-extend-voice-recognition-counting-so-the-app-can-count-the-number-of-mantra-beats-detected-from-voice-recognition-by-counting-multiple-occurrences-of-the-selected-mantra-within-each-finalized-speech-to-text-transcript-instead-of-incrementing-by-at-most-1-per-transcript",
+      "featureTitle": "Extend voice recognition counting so the app can count the number of mantra “beats” detected from voice recognition by counting multiple occurrences of the selected mantra within each finalized speech-to-text transcript (instead of incrementing by at most 1 per transcript).",
+      "files": [
+        "frontend/src/hooks/useMantraCounting.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-chanting-ui-to-clearly-label-voice-based-counting-as-beats-english-text-in-the-voice-recognition-card-so-users-understand-that-each-detected-repetition-contributes-to-the-beat-count",
+      "featureTitle": "Update the Chanting UI to clearly label voice-based counting as “beats” (English text) in the voice recognition card, so users understand that each detected repetition contributes to the beat count.",
+      "files": [
+        "frontend/src/components/chant/VoiceControls.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

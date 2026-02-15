@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        
+        /* Warm, serene palette - Light mode */
+        --background: 0.98 0.01 45;
+        --foreground: 0.25 0.02 45;
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.02 45;
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 45;
+        
+        /* Saffron/warm orange as primary */
+        --primary: 0.65 0.18 45;
+        --primary-foreground: 0.98 0.01 45;
+        
+        /* Cream/sand tones */
+        --secondary: 0.92 0.02 60;
+        --secondary-foreground: 0.35 0.02 45;
+        --muted: 0.95 0.01 50;
+        --muted-foreground: 0.50 0.02 45;
+        --accent: 0.88 0.03 50;
+        --accent-foreground: 0.30 0.02 45;
+        
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.01 45;
+        
+        --border: 0.88 0.01 50;
+        --input: 0.88 0.01 50;
+        --ring: 0.65 0.18 45;
+        
+        /* Chart colors - warm earth tones */
+        --chart-1: 0.65 0.18 45;
+        --chart-2: 0.55 0.15 30;
+        --chart-3: 0.70 0.12 60;
+        --chart-4: 0.60 0.20 50;
+        --chart-5: 0.50 0.10 40;
+    }
+
+    .dark {
+        /* Deep charcoal background with warm undertones */
+        --background: 0.20 0.02 45;
+        --foreground: 0.95 0.01 50;
+        --card: 0.25 0.02 45;
+        --card-foreground: 0.95 0.01 50;
+        --popover: 0.22 0.02 45;
+        --popover-foreground: 0.95 0.01 50;
+        
+        /* Lighter saffron for dark mode */
+        --primary: 0.75 0.16 50;
+        --primary-foreground: 0.20 0.02 45;
+        
+        --secondary: 0.30 0.02 45;
+        --secondary-foreground: 0.95 0.01 50;
+        --muted: 0.28 0.02 45;
+        --muted-foreground: 0.70 0.01 50;
+        --accent: 0.35 0.03 50;
+        --accent-foreground: 0.95 0.01 50;
+        
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.20 0.02 45;
+        
+        --border: 0.30 0.02 45;
+        --input: 0.30 0.02 45;
+        --ring: 0.70 0.15 50;
+        
+        /* Chart colors - warm tones for dark mode */
+        --chart-1: 0.75 0.16 50;
+        --chart-2: 0.65 0.14 35;
+        --chart-3: 0.80 0.10 65;
+        --chart-4: 0.70 0.18 55;
+        --chart-5: 0.60 0.12 45;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}

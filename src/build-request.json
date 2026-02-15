@@ -1,0 +1,55 @@
+{
+  "kind": "build_request",
+  "title": "Add voice-recognition beat counting (multi-match) during chanting",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "text": "Extend voice recognition counting so the app can count the number of mantra “beats” detected from voice recognition by counting multiple occurrences of the selected mantra within each finalized speech-to-text transcript (instead of incrementing by at most 1 per transcript).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Add no. Of beats by voice recognition"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When a finalized speech recognition result contains the selected mantra repeated multiple times (e.g., \"Radhe Radhe Radhe Radhe\"), the session count increases by the number of detected repetitions, not just +1.",
+        "Counting remains case-insensitive and punctuation/extra whitespace do not prevent matches (uses the existing normalization approach).",
+        "The change does not double-count the same finalized transcript event (each finalized transcript segment is processed once).",
+        "Manual increment (+) continues to work and increments the same session count used by Mala Progress and Target Progress."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Update the Chanting UI to clearly label voice-based counting as “beats” (English text) in the voice recognition card, so users understand that each detected repetition contributes to the beat count.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Add no. Of beats by voice recognition"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The voice recognition section displays an English label that references “beats” (e.g., “Voice beats”) alongside the live count used for the current session.",
+        "All user-facing text introduced by this change is in English."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (Shadcn UI sources) or any other frontend immutable paths listed in SYSTEM_CONTEXT.",
+    "Keep all user-facing text in English."
+  ],
+  "nonGoals": [
+    "Adding new backend fields or changing Motoko canister APIs for beat counting.",
+    "Adding real-time audio beat (music BPM) detection."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

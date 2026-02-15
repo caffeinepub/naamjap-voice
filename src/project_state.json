@@ -1,0 +1,201 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Mobile app “NaamJap Voice” for mantra chanting (naam jap) using voice recognition to detect/count chants, with mala counter, streaks, reminders, progress tracking, offline support, calming spiritual UI, and Android/iOS compatibility.",
+  "architectural_notes": [
+    "Use a speech-to-text API for mantra detection and counting.",
+    "Persist user progress via local storage with optional cloud sync.",
+    "App must support offline usage for core chanting/counting flows.",
+    "Target both Android and iOS (cross-platform compatible approach)."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-the-core-app-structure-for-naamjap-voice-as-a-responsive-web-app-with-internet-identity-sign-in-and-the-following-main-screens-1-chanting-session-2-history-streaks-dashboard-3-settings-mantra-selection-target-theme-reminders-audio-all-user-facing-text-must-be-in-english-and-the-app-name-must-appear-as-naamjap-voice",
+      "title": "Create the core app structure for “NaamJap Voice” as a responsive web app with Internet Identity sign-in and the following main screens: (1) Chanting session, (2) History/Streaks dashboard, (3) Settings (mantra selection, target, theme, reminders, audio). All user-facing text must be in English and the app name must appear as “NaamJap Voice”.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-voice-recognition-based-mantra-detection-and-counting-during-a-chanting-session-using-a-browser-speech-to-text-capability-e-g-web-speech-api-and-a-robust-text-matching-strategy-for-selected-mantras-e-g-case-insensitive-matching-trimming-punctuation-users-must-be-able-to-select-a-mantra-from-a-predefined-list-including-at-least-radhe-radhe-om-namah-shivaya-hare-krishna-and-see-the-live-count-increment-when-the-recognized-speech-matches-the-selected-mantra",
+      "title": "Implement voice recognition-based mantra detection and counting during a chanting session using a browser speech-to-text capability (e.g., Web Speech API) and a robust text-matching strategy for selected mantras (e.g., case-insensitive matching, trimming punctuation). Users must be able to select a mantra from a predefined list (including at least: “Radhe Radhe”, “Om Namah Shivaya”, “Hare Krishna”) and see the live count increment when the recognized speech matches the selected mantra.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-digital-mala-counter-ui-representing-a-108-bead-cycle-and-show-progress-through-the-current-mala-as-the-chant-count-increases-when-the-count-reaches-a-multiple-of-108-trigger-vibration-feedback-when-supported-using-the-browser-vibration-api-and-show-a-subtle-on-screen-affirmation-e-g-1-mala-completed",
+      "title": "Add a digital mala counter UI representing a 108-bead cycle and show progress through the current mala as the chant count increases. When the count reaches a multiple of 108, trigger vibration feedback when supported (using the browser Vibration API) and show a subtle on-screen affirmation (e.g., “1 mala completed”).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-background-audio-playback-during-chanting-with-an-option-to-choose-among-at-least-three-calming-tracks-soft-flute-temple-bells-and-meditation-sound-audio-can-be-started-stopped-and-volume-adjusted-independently-of-voice-recognition",
+      "title": "Provide background audio playback during chanting with an option to choose among at least three calming tracks: soft flute, temple bells, and meditation sound. Audio can be started/stopped and volume adjusted independently of voice recognition.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-user-set-jap-targets-e-g-108-1008-5000-and-display-target-progress-for-the-current-day-session-e-g-progress-bar-and-remaining-count-when-the-target-is-reached-show-a-calm-completion-state",
+      "title": "Implement user-set jap targets (e.g., 108, 1008, 5000) and display target progress for the current day/session (e.g., progress bar and remaining count). When the target is reached, show a calm completion state.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-chanting-data-locally-for-offline-use-at-minimum-selected-mantra-daily-counts-session-history-target-audio-preference-theme-using-browser-local-storage-and-ensure-the-app-remains-usable-when-the-network-is-unavailable-counting-mala-ui-and-local-history-must-still-function",
+      "title": "Persist chanting data locally for offline use (at minimum: selected mantra, daily counts, session history, target, audio preference, theme) using browser local storage, and ensure the app remains usable when the network is unavailable (counting, mala UI, and local history must still function).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-cloud-sync-of-chanting-progress-to-the-internet-computer-backend-for-authenticated-users-sync-should-store-per-day-totals-session-summaries-streak-metadata-and-user-preferences-when-a-user-signs-in-on-a-new-device-browser-their-dashboard-and-settings-should-restore-from-cloud-data-with-sensible-merge-behavior-when-local-offline-data-exists",
+      "title": "Add cloud sync of chanting progress to the Internet Computer backend for authenticated users. Sync should store per-day totals, session summaries, streak metadata, and user preferences. When a user signs in on a new device/browser, their dashboard and settings should restore from cloud data (with sensible merge behavior when local offline data exists).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-dashboard-that-includes-1-daily-streak-tracking-2-history-list-of-past-sessions-days-and-3-progress-graphs-for-daily-weekly-monthly-chanting-counts-graphs-must-be-readable-on-mobile-screens",
+      "title": "Create a dashboard that includes: (1) daily streak tracking, (2) history list of past sessions/days, and (3) progress graphs for daily/weekly/monthly chanting counts. Graphs must be readable on mobile screens.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-dark-mode-and-light-mode-with-a-user-toggle-and-apply-the-theme-consistently-across-all-screens-including-charts-mala-ui-and-buttons",
+      "title": "Implement dark mode and light mode with a user toggle, and apply the theme consistently across all screens including charts, mala UI, and buttons.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-reminder-scheduling-ux-for-morning-and-evening-jap-in-the-web-context-provide-an-in-app-reminder-system-and-when-available-browser-notifications-via-the-notification-api-user-permissioned-reminders-should-be-configurable-time-on-off-and-persist-across-reloads",
+      "title": "Implement reminder scheduling UX for morning and evening jap. In the web context, provide an in-app reminder system and, when available, browser notifications via the Notification API (user-permissioned). Reminders should be configurable (time on/off) and persist across reloads.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-clean-peaceful-spiritual-visual-theme-distinct-style-across-the-app-using-tailwind-styling-incorporating-lotus-diya-temple-bell-inspired-visuals-and-calm-typography-avoid-blue-purple-as-primary-colors-use-a-warm-serene-palette-e-g-saffron-sand-cream-deep-charcoal-and-consistent-spacing-and-component-styling",
+      "title": "Apply a clean, peaceful spiritual visual theme (distinct style) across the app using Tailwind styling, incorporating lotus/diya/temple-bell inspired visuals and calm typography. Avoid blue/purple as primary colors; use a warm, serene palette (e.g., saffron, sand/cream, deep charcoal) and consistent spacing and component styling.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-and-render-generated-static-spiritual-themed-image-assets-from-frontend-public-assets-generated-and-use-them-in-the-ui-e-g-app-header-mark-subtle-background-pattern-and-small-decorative-icons-without-routing-image-delivery-through-the-backend",
+      "title": "Add and render generated static spiritual-themed image assets from `frontend/public/assets/generated` and use them in the UI (e.g., app header mark, subtle background pattern, and small decorative icons) without routing image delivery through the backend.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-voice-recognition-counting-so-the-app-can-count-the-number-of-mantra-beats-detected-from-voice-recognition-by-counting-multiple-occurrences-of-the-selected-mantra-within-each-finalized-speech-to-text-transcript-instead-of-incrementing-by-at-most-1-per-transcript",
+      "title": "Extend voice recognition counting so the app can count the number of mantra “beats” detected from voice recognition by counting multiple occurrences of the selected mantra within each finalized speech-to-text transcript (instead of incrementing by at most 1 per transcript).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-chanting-ui-to-clearly-label-voice-based-counting-as-beats-english-text-in-the-voice-recognition-card-so-users-understand-that-each-detected-repetition-contributes-to-the-beat-count",
+      "title": "Update the Chanting UI to clearly label voice-based counting as “beats” (English text) in the voice recognition card, so users understand that each detected repetition contributes to the beat count.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Voice recognition (speech-to-text) to detect selected mantra and count chants",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Digital mala counter (108 beads) with vibration feedback after every 108 chants",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Background music selection (soft flute, temple bells, meditation sounds) during chanting",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Daily streak tracking and history dashboard",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Reminder notifications for morning and evening jap",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Dark mode and light mode",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Progress graphs for daily/weekly/monthly chanting counts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "User-set chanting targets (e.g., 108/1008/5000)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Offline mode support",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Clean, peaceful spiritual-themed UI (lotus/diya/temple bell design)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Implement the backend data model and API methods in a single Motoko actor to support: user profile/preferences, per-day chant totals by mantra, session summaries (timestamp, duration optional, count, mantra), and streak calculation. Ensure data persists across canister upgrades using stable storage patterns (add a migration file only if required by actual stable structure needs).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "NaamJap Voice",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
